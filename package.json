@@ -1,4 +1,10 @@
 {
+  "name": "milksnake",
+  "description": "backend for milksnake",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "socket.io": "^2.3.0"
   }
