@@ -5,8 +5,8 @@ const { makeid } = require('./utils');
 
 const state = {};
 const clientRooms = {};
-io.origins(["http://milksnake.surge.sh"]);
-io.set( 'origins', '*' );
+io.origins(["https://milksnake.surge.sh"]);
+io.set( 'origins', 'https://milksnake.surge.sh' );
 io.on('connection', client => {
 
   client.on('keydown', handleKeydown);
