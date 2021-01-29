@@ -3,7 +3,7 @@
   "description": "backend for milksnake",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "socket.io": "^2.3.0"
