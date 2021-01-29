@@ -1,4 +1,23 @@
-const io = require("socket.io")();
+const httpServer = require('http').createServer((req, res) => {
+  // serve the index.html file
+  res.setHeader('Content-Type', 'text/html');
+  res.setHeader('Content-Length', Buffer.byteLength(content));
+  res.end(content);
+});
+
+const io = require("socket.io")(httpServer, {
+  origins: ["https://milksnake.surge.sh"],
+
+  handlePreflightRequest: (req, res) => {
+    res.writeHead(200, {
+      "Access-Control-Allow-Origin": "https://milksnake.surge.sh",
+      "Access-Control-Allow-Methods": "GET,POST",
+      "Access-Control-Allow-Headers": "my-custom-header",
+      "Access-Control-Allow-Credentials": true
+    });
+    res.end();
+  }
+});
 const { initGame, gameLoop, getUpdatedVelocity } = require('./game');
 const { FRAME_RATE } = require('./constants');
 const { makeid } = require('./utils');
