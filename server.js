@@ -1,15 +1,11 @@
-const io = require('socket.io')({httpServer, {
-  cors: {
-    origin: "http://milksnake.surge.sh",
-    methods: ["GET", "POST"]}
-);
+const io = require("socket.io")();
 const { initGame, gameLoop, getUpdatedVelocity } = require('./game');
 const { FRAME_RATE } = require('./constants');
 const { makeid } = require('./utils');
 
 const state = {};
 const clientRooms = {};
-
+io.origins(["http://milksnake.surge.sh"]);
 io.on('connection', client => {
 
   client.on('keydown', handleKeydown);
