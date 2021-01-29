@@ -1,8 +1,8 @@
-const io = require('socket.io')({
+const io = require('socket.io')({httpServer, {
   cors: {
-    origin: '*',
-  }
-});
+    origin: "http://milksnake.surge.sh",
+    methods: ["GET", "POST"]}
+);
 const { initGame, gameLoop, getUpdatedVelocity } = require('./game');
 const { FRAME_RATE } = require('./constants');
 const { makeid } = require('./utils');
