@@ -52,7 +52,7 @@ function gameLoop(state) {
   if (!state) {
     return;
   }
-  console.log(state)
+  // console.log(state)
   const playerOne = state.players[0];
   const playerTwo = state.players[1];
 
