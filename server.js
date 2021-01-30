@@ -103,7 +103,7 @@ function emitGameState(room, gameState) {
 }
 
 function emitScore(room, score) {
-  console.log("score :", score);
+  // console.log("score :", score);
   // console.log(gameState.players[1].snake.length;
   // Send this event to everyone in the room.
   io.sockets.in(room)
